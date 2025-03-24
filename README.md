@@ -2,6 +2,10 @@
 
 A modern, responsive web application built with Vue 3 and Vite that allows users to browse and search TV shows using the TVMaze API.
 
+## Live Demo
+
+Visit the live application at: [https://nataliia-radina.github.io/tv-shows-dashboard/](https://nataliia-radina.github.io/tv-shows-dashboard/)
+
 ## Features
 
 - Browse TV shows by genre
@@ -87,6 +91,23 @@ The production build will be created in the `dist` directory, optimized with:
 - Asset optimization
 - Tree-shaking
 - Modern browser support
+
+### Deployment
+
+The application is automatically deployed to GitHub Pages using GitHub Actions. When changes are pushed to the main branch:
+
+1. The GitHub Action workflow builds the application
+2. Deploys it to the gh-pages branch
+3. Makes it available at [https://nataliia-radina.github.io/tv-shows-dashboard/](https://nataliia-radina.github.io/tv-shows-dashboard/)
+
+To deploy manually:
+```bash
+# Build the application
+npm run build
+
+# Deploy to GitHub Pages
+git subtree push --prefix dist origin gh-pages
+```
 
 ### Testing
 The project uses Jest and Vue Test Utils for unit testing. To run the tests:
