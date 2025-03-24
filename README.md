@@ -73,6 +73,21 @@ npm install
 npm run dev
 ```
 
+### Build for Production
+```bash
+# Build the application
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+The production build will be created in the `dist` directory, optimized with:
+- Minified JavaScript and CSS
+- Asset optimization
+- Tree-shaking
+- Modern browser support
+
 ### Testing
 The project uses Jest and Vue Test Utils for unit testing. To run the tests:
 
@@ -99,15 +114,14 @@ To format the code using Prettier:
 npm run format
 ```
 
-### Build for Production
-```bash
-npm run build
-```
+## Performance
 
-### Preview Production Build
-```bash
-npm run preview
-```
+The application is optimized for performance with:
+- Lazy loading images using Intersection Observer
+- Code splitting and dynamic imports
+- Efficient state management
+- Optimized production build
+- Minimal CSS footprint
 
 ## Testing Strategy
 
