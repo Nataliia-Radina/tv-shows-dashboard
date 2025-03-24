@@ -12,8 +12,8 @@
         class="search-bar"
         autofocus
       />
-      <button 
-        v-if="searchQuery" 
+      <button
+        v-if="searchQuery"
         @click="clearSearch"
         @keydown.enter="clearSearch"
         tabindex="0"
@@ -28,19 +28,16 @@
     <div v-if="initialLoading" class="loading">
       <span>Loading shows...</span>
     </div>
-    
+
     <div v-else-if="error" class="error">
       {{ error }}
     </div>
-    
+
     <template v-else>
       <div v-if="searchQuery" class="search-results">
         <div v-if="searchResults.length" class="genre-row">
           <h2 class="genre-row__title">Search Results</h2>
-          <div 
-            class="genre-row__content" 
-            role="list"
-          >
+          <div class="genre-row__content" role="list">
             <ShowCard
               v-for="show in searchResults"
               :key="show.id"
@@ -49,20 +46,17 @@
             />
           </div>
         </div>
-        
+
         <div v-else-if="hasSearched" class="no-results">
           <p v-if="searchLoading">Searching...</p>
           <p v-else>No shows found for "{{ searchQuery }}"</p>
         </div>
       </div>
-      
+
       <template v-else v-for="(shows, genre) in showsByGenre" :key="genre">
         <section class="genre-row">
           <h2 class="genre-row__title">{{ genre }}</h2>
-          <div 
-            class="genre-row__content" 
-            role="list"
-          >
+          <div class="genre-row__content" role="list">
             <ShowCard
               v-for="show in shows"
               :key="show.id"
@@ -84,7 +78,8 @@ import debounce from 'lodash.debounce'
 import ShowCard from '../components/ShowCard.vue'
 
 const store = useShowsStore()
-const { shows, loading, error, showsByGenre, searchResults } = storeToRefs(store)
+const { shows, loading, error, showsByGenre, searchResults } =
+  storeToRefs(store)
 const searchQuery = ref('')
 const hasSearched = ref(false)
 const searchLoading = ref(false)
@@ -97,7 +92,7 @@ const debouncedSearch = debounce(async () => {
     hasSearched.value = false
     return
   }
-  
+
   searchLoading.value = true
   hasSearched.value = true
   await store.searchShows(searchQuery.value)
@@ -188,9 +183,9 @@ onUnmounted(() => {
   .search-container {
     justify-content: center;
   }
-  
+
   .search-bar {
-    font-size: 16px; 
+    font-size: 16px;
     padding: 0.4rem 2rem 0.4rem 1rem;
     max-width: 100%;
   }

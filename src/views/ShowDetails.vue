@@ -1,9 +1,7 @@
 <template>
   <main class="container">
-    <div v-if="isLoading" class="loading-state">
-      Loading...
-    </div>
-    
+    <div v-if="isLoading" class="loading-state">Loading...</div>
+
     <div v-else-if="hasError" class="error-state">
       <p>Sorry, we couldn't load the show details.</p>
       <button @click="$router.push('/')" class="back-button">
@@ -38,10 +36,7 @@
         <div class="show-details__summary">
           <div v-html="show.summary"></div>
         </div>
-        <button 
-          @click="$router.push('/')" 
-          class="back-button"
-        >
+        <button @click="$router.push('/')" class="back-button">
           ← Back to Shows
         </button>
       </div>
@@ -51,9 +46,9 @@
     <section class="show-details__cast" v-if="cast.length">
       <h2>Cast</h2>
       <div class="cast-grid" role="list">
-        <article 
-          v-for="actor in cast" 
-          :key="actor.person.id" 
+        <article
+          v-for="actor in cast"
+          :key="actor.person.id"
           class="cast-member"
           role="listitem"
         >
@@ -86,7 +81,8 @@ const hasError = ref(false)
 
 onMounted(async () => {
   try {
-    const { show: showData, cast: castData } = await tvShowsService.getShowDetails(route.params.id)
+    const { show: showData, cast: castData } =
+      await tvShowsService.getShowDetails(route.params.id)
     show.value = showData
     cast.value = castData
   } catch (error) {
@@ -238,12 +234,12 @@ onMounted(async () => {
   .show-details__info {
     padding-top: 0;
   }
-  
+
   .cast-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
   }
-  
+
   .cast-member__image {
     height: 200px;
   }

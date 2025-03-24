@@ -1,7 +1,7 @@
 <template>
   <article class="show-card">
-    <router-link 
-      :to="{ name: 'show-details', params: { id: show.id }}" 
+    <router-link
+      :to="{ name: 'show-details', params: { id: show.id } }"
       class="show-card__link"
       :aria-label="'View details for ' + show.name"
     >
@@ -88,15 +88,15 @@ defineProps({
   .show-card {
     flex: 0 0 150px;
   }
-  
+
   .show-card__image {
     height: 200px;
   }
-  
+
   .show-card__header {
     padding: 0.75rem;
   }
-  
+
   .show-card__title {
     font-size: 1rem;
   }

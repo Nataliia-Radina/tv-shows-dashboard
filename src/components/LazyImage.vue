@@ -9,7 +9,11 @@
         class="lazy-image__img"
         :style="{ height }"
       />
-      <div v-if="!isLoaded && !hasError" class="lazy-image__placeholder" aria-hidden="true">
+      <div
+        v-if="!isLoaded && !hasError"
+        class="lazy-image__placeholder"
+        aria-hidden="true"
+      >
         <div class="lazy-image__loading"></div>
       </div>
     </template>
@@ -51,7 +55,7 @@ const onError = () => {
   isLoaded.value = false
 }
 
-const handleIntersection = (entries) => {
+const handleIntersection = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       img.value.src = props.src
@@ -77,16 +81,19 @@ onMounted(() => {
   }
 })
 
-watch(() => props.src, (newSrc) => {
-  isLoaded.value = false
-  hasError.value = false
-  if (observer.value) {
-    observer.value.disconnect()
-    if (newSrc) {
-      observeImage()
+watch(
+  () => props.src,
+  newSrc => {
+    isLoaded.value = false
+    hasError.value = false
+    if (observer.value) {
+      observer.value.disconnect()
+      if (newSrc) {
+        observeImage()
+      }
     }
   }
-})
+)
 
 onUnmounted(() => {
   if (observer.value) {

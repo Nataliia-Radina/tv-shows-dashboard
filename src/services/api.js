@@ -23,7 +23,9 @@ export const tvShowsService = {
 
   async searchShows(query) {
     try {
-      const response = await api.get(`/search/shows?q=${encodeURIComponent(query)}`)
+      const response = await api.get(
+        `/search/shows?q=${encodeURIComponent(query)}`
+      )
       return response.data.map(item => item.show)
     } catch (error) {
       console.error('Error searching shows:', error)
