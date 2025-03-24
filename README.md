@@ -1,29 +1,27 @@
 # TV Shows Dashboard
 
-A modern, responsive web application built with Vue 3 and Vite that allows users to browse and search TV shows using the TVMaze API.
+Hey! 👋 This is my TV shows browser app built with Vue 3. It lets you explore and search through TV shows using the TVMaze API. I focused on making it fast and easy to use, with a clean, modern design.
 
-## Live Demo
+Check it out here: [Live Demo](https://nataliia-radina.github.io/tv-shows-dashboard/)
 
-Visit the live application at: [https://nataliia-radina.github.io/tv-shows-dashboard/](https://nataliia-radina.github.io/tv-shows-dashboard/)
+## What's Cool About It?
 
-## Features
-
-- Browse TV shows by genre
-- Search functionality with keyboard support
-- Modern UI with smooth animations
-- Full keyboard accessibility
-- Responsive design for all devices
-- Lazy loading images for better performance
-- Detailed show information including schedule and network
+- 🎬 Browse shows by genre - find exactly what you're in the mood for
+- 🔍 Quick search with keyboard shortcuts
+- 📱 Works great on phones, tablets, and desktops
+- 🖼 Images load as you scroll (no more waiting!)
+- 📺 Detailed show info with schedules and network details
+- ⌨️ Fully keyboard accessible - no mouse needed
 
 ## Tech Stack
 
-- Vue 3 with Composition API
-- Vite for fast development
-- Vue Router for navigation
-- TVMaze API for show data
-- CSS Grid and Flexbox for layouts
-- Modern CSS variables for theming
+I built this with:
+- Vue 3 (with Composition API) - for the UI
+- Vite - super fast development
+- Vue Router - smooth navigation
+- TVMaze API - for all the show data
+- CSS Grid & Flexbox - for responsive layouts
+- CSS Variables - for easy theming
 
 ## Getting Started
 
@@ -161,3 +159,5 @@ Key test files:
 - **Prettier**: Maintains consistent code formatting
 - **Jest**: Handles unit testing with JSDOM environment
 - **Vue Test Utils**: Provides Vue component testing utilities
+
+Hope you enjoy using it as much as I enjoyed building it! Feel free to open an issue if you find any bugs or have suggestions.
